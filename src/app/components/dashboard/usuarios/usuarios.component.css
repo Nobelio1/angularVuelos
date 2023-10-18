@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.td-1{
+  text-align: center;
+}
+
+a{
+  padding: 0.5rem;
+}
+
+td a{
+  cursor: pointer;
+}
+
+.buscar{
+  color: #1878b0
+}
+
+.editar{
+  color: #1f516f
+}
+
+.eliminar{
+  color: #e15639
+}
+
+.mat-mdc-form-field {
+  margin-top: 1rem;
+  font-size: 14px;
+  width: 100%;
+}
+

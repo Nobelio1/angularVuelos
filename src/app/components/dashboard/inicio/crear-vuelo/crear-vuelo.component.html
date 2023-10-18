@@ -1,0 +1,56 @@
+<div class="container">
+  <mat-toolbar>
+    <span>{{ operacion }}</span>
+  </mat-toolbar>
+  <mat-card class="crear-card">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+        <mat-grid-list cols="4" rowHeight="78px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1"> </mat-grid-tile>
+          <mat-grid-tile [colspan]="3" [rowspan]="5">
+            <img
+              src="../../../../../assets/img/viajar.png"
+              width="250px"
+              height="250px"
+            />
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-form-field class="ancho">
+              <mat-label>HORA INICIO</mat-label>
+              <input matInput formControlName="horainicio" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-form-field class="ancho">
+              <mat-label>HORA FIN</mat-label>
+              <input matInput formControlName="horafin" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-form-field class="ancho">
+              <mat-label>PARTIDA</mat-label>
+              <input matInput formControlName="partida" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-form-field class="ancho">
+              <mat-label>DESTINO</mat-label>
+              <input matInput formControlName="destino" />
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <button
+              routerLink="/dashboard"
+              mat-raised-button
+              color="primary"
+              class="m-r"
+            >
+              Volver
+            </button>
+            <button type="submit" mat-stroked-button>Acetar</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

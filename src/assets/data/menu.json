@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Vuelos",
+    "redirect": "/dashboard"
+  },
+  {
+    "nombre": "Clientes",
+    "redirect": "/dashboard/usuarios"
+  },
+  {
+    "nombre": "Seguimiento",
+    "redirect": "/dashboard/reportes"
+  }
+]

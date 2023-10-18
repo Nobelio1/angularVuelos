@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span>Gestor de Vuelos</span>
+  <span class="example-spacer"></span>
+  <button *ngFor="let item of menu" [routerLink]="item.redirect" mat-button>
+    {{ item.nombre }}
+  </button>
+  <span class="example-spacer"></span>
+  <!-- Todo: Arreglar logout -->
+  <button
+    routerLink="/login"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

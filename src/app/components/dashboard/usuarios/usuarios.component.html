@@ -1,0 +1,83 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Clientes</span>
+    <div class="example-spacer"></div>
+    <button
+      mat-raised-button
+      color="primary"
+      routerLink="/dashboard/crear-usuario"
+    >
+      Agregar
+    </button>
+  </mat-toolbar>
+  <div>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Cliente"
+        #input
+      />
+    </mat-form-field>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <!-- <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID CLIENTE</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container> -->
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>NOMBRE</th>
+          <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="apellido">
+          <th mat-header-cell *matHeaderCellDef>APELLIDOS</th>
+          <td mat-cell *matCellDef="let element">{{ element.apellido }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="nacionalidad">
+          <th mat-header-cell *matHeaderCellDef>Nacionlidad</th>
+          <td mat-cell *matCellDef="let element">{{ element.nacionalidad }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dni">
+          <th mat-header-cell *matHeaderCellDef>DNI</th>
+          <td mat-cell *matCellDef="let element">{{ element.dni }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td class="td-1" mat-cell *matCellDef="let element">
+            <a
+              routerLink="/dashboard/crear-usuario/{{ element.id }}"
+              class="editar"
+              matTooltip="Editar Cliente"
+            >
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a
+              class="eliminar"
+              (click)="eliminarCliente(element.id)"
+              matTooltip="Eliminar Cliente"
+            >
+              <mat-icon>delete</mat-icon>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page of users"
+      ></mat-paginator>
+    </div>
+  </div>
+  <!-- <h2 *ngIf="listCliente.length == 0">No hay usuarios para mostrar</h2> -->
+</div>
